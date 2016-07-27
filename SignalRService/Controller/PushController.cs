@@ -21,5 +21,11 @@ namespace SignalRService.Controller
             chat.Clients.Group(serviceName).notice(msg);
             return "ok";
         }
+
+        [HttpGet]
+        public string Ping()
+        {
+            return "Ok";
+        }
     }
 }
