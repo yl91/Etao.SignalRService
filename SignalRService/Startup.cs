@@ -16,6 +16,8 @@ namespace SignalRService
         {
             // 有关如何配置应用程序的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=316888
             HttpConfiguration config = new HttpConfiguration();
+            config.Filters.Add(new ErrorAttribute());
+
             WebApiConfig.Register(config);
             app.UseWebApi(config);
 
