@@ -16,7 +16,7 @@ namespace SignalRService
         static void Main(string[] args)
         {
             //string ip = IpHelper.IntranetIp4();
-            string ip = IpHelper.InternetIp4();
+            string ip = "123.56.16.13";
             LogManager.Info("ip", ip);
             int port = GetPort(ip);
             string baseUrl = string.Format("http://{0}:{1}/", ip, port);
