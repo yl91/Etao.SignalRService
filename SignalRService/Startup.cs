@@ -5,6 +5,7 @@ using Owin;
 using System.Web.Http;
 using Microsoft.Owin.Cors;
 using Microsoft.AspNet.SignalR;
+using Easy.Register;
 
 [assembly: OwinStartup(typeof(SignalRService.Startup))]
 
