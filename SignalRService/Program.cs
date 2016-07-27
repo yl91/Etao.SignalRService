@@ -3,6 +3,7 @@ using Easy.Public.MyLog;
 using Microsoft.Owin.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,12 @@ namespace SignalRService
         static void Main(string[] args)
         {
             //string ip = IpHelper.IntranetIp4();
-            string ip = "123.56.16.13";
-            LogManager.Info("ip", ip);
-            int port = GetPort(ip);
-            string baseUrl = string.Format("http://{0}:{1}/", ip, port);
+            //string ip = "123.56.16.13";
+            var ip= ConfigurationManager.AppSettings["ip"];
+            //LogManager.Info("ip", ip);
+            //int port = GetPort(ip);
+            //string baseUrl = string.Format("http://{0}:{1}/", ip, port);
+            string baseUrl = string.Format("http://{0}",ip);
             System.Console.WriteLine(baseUrl);
             using (WebApp.Start<Startup>(new StartOptions(baseUrl)))
             {
